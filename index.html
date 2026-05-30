@@ -1,1 +1,61 @@
-<h1>TEST</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Fullscreen</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        overflow: hidden;
+        background: black;
+    }
+
+    /* Ajusta esta variable para cambiar la opacidad del logo */
+    :root {
+        --logo-opacity: 0.75;
+    }
+
+    /* Video de fondo */
+    #background-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    /* Logo */
+    #logo {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 200px; /* Cambia el tamaño aquí */
+        height: auto;
+        opacity: var(--logo-opacity);
+        z-index: 10;
+        pointer-events: none;
+    }
+</style>
+</head>
+<body>
+
+<!-- Video -->
+<video id="background-video" autoplay muted loop playsinline>
+    <source src="video.mp4" type="video/mp4">
+    Tu navegador no soporta videos HTML5.
+</video>
+
+<!-- Logo -->
+<img id="logo" src="imagen.png" alt="Logo">
+
+</body>
+</html>
